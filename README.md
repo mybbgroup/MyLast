@@ -4,7 +4,7 @@ A MyBB plugin to add a link to any thread where you have posted to jump to your 
 This is the upgraded version of old [MyLast plugin for MyBB 1.6.x](https://mods.mybb.com/view/mylast) to work with 1.8.x family.
 
 ## Compatibility
-Designed / tested to be working with MyBB 1.8.17
+Designed / tested to be working with MyBB version **1.8.17**.
 
 ## Features
 The plugin generates clickable links to forumdisplay and showthread to jump to the current (logged in) user's last post to the target thread.
@@ -23,4 +23,4 @@ Old 1.6.x versions:
 - v.0.31: Forum display legend icons linked.
 
 1.8.x versions:
-- Initial release.
+- v.1.0.0 Initial release.
