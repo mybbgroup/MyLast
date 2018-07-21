@@ -1,0 +1,29 @@
+# IDE files
+.github
+.settings
+.project
+.buildpath
+.vscode
+.history
+.idea
+
+# Generic OS stuff
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*~
+
+# Logs and DBs
+*.log
+*.sql
+*.sqlite
+
+# Generic git files
+*.orig
+
+# Documentation / Presentation assets
+assets
