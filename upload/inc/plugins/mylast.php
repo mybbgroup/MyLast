@@ -6,7 +6,7 @@
  * @package MyBB Plugin
  * @author effone <effone@mybb.com>
  * @copyright 2018 MyBB Group <http://mybb.group>
- * @version 1.0.0
+ * @version 1.0.1
  * @license GPL-3.0
  * 
  */
@@ -25,7 +25,7 @@ function mylast_info()
 		'website' => 'https://github.com/mybbgroup/mylast',
 		'author' => 'effone',
 		'authorsite' => 'https://eff.one',
-		'version' => '1.0.0',
+		'version' => '1.0.1',
 		'guid' => '9ffad6bb852463a3229108d23e780bee', // Old 16* GUID
 		'compatibility' => '18*'
 	);
@@ -44,7 +44,7 @@ function mylast_threadlink()
 	if ($mybb->user['uid'] && $thread['doticon']) {
 		$mylast = "<a href='showthread.php?tid=" . $thread['tid'] . "&action=mylastpost'>";
 		$mylast_cl = "</a>";
-		$mylast_tip = " " . $lang->mylast_tooltip;
+		$mylast_tip = "" . $lang->mylast_tooltip;
 	}
 }
 
