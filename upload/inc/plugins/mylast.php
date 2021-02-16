@@ -89,7 +89,7 @@ function mylast_templates()
 		if (isset($templatelist)) {
 			$templatelist.= ',';
 		}
-	$templatelist.= 'mylast_link';
+		$templatelist.= 'mylast_link';
 	}
 }
 
