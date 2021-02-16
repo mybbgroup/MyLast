@@ -5,8 +5,8 @@
  * 
  * @package MyBB Plugin
  * @author effone <effone@mybb.com>
- * @copyright 2018 MyBB Group <http://mybb.group>
- * @version 1.0.0
+ * @copyright 2021 MyBB Group <http://mybb.group>
+ * @version 1.0.1
  * @license GPL-3.0
  * 
  */
@@ -25,15 +25,17 @@ function mylast_info()
 		'website' => 'https://github.com/mybbgroup/mylast',
 		'author' => 'effone',
 		'authorsite' => 'https://eff.one',
-		'version' => '1.0.0',
+		'version' => '1.0.1',
 		'guid' => '9ffad6bb852463a3229108d23e780bee', // Old 16* GUID
+		'codename' => '',
 		'compatibility' => '18*'
 	);
 }
 
-// Hooks :o
+// Hooks
 $plugins->add_hook('showthread_start', 'mylast_generate');
 $plugins->add_hook('forumdisplay_thread', 'mylast_threadlink');
+$plugins->add_hook('global_start', 'mylast_templates');
 
 function mylast_threadlink()
 {
@@ -79,6 +81,19 @@ function mylast_generate()
 	}
 }
 
+// Cache plugin templates
+function mylast_templates() 
+{
+	global $templatelist;
+	if (in_array(THIS_SCRIPT, explode(',', 'showthread.php'))) {
+	if (isset($templatelist)) {
+		$templatelist.= ',';
+        }
+	$templatelist.= 'mylast_link';
+	}
+}
+
+// Plugin activate
 function mylast_activate()
 {
 	require_once MYBB_ROOT . "/inc/adminfunctions_templates.php";
@@ -101,6 +116,7 @@ function mylast_activate()
 	find_replace_templatesets('forumdisplay_thread', '#{\$folder_label}#', '{\$folder_label}{\$mylast_tip}');
 }
 
+// Plugin deactivate
 function mylast_deactivate()
 {
 	require_once MYBB_ROOT . '/inc/adminfunctions_templates.php';
