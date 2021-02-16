@@ -27,7 +27,7 @@ function mylast_info()
 		'authorsite' => 'https://eff.one',
 		'version' => '1.0.1',
 		'guid' => '9ffad6bb852463a3229108d23e780bee', // Old 16* GUID
-		'codename' => '',
+		'codename' => 'mybbgroup_mylast',
 		'compatibility' => '18*'
 	);
 }
@@ -85,7 +85,7 @@ function mylast_generate()
 function mylast_templates() 
 {
 	global $templatelist;
-	if (in_array(THIS_SCRIPT, explode(',', 'showthread.php'))) {
+	if (THIS_SCRIPT == 'showthread.php') {
 	if (isset($templatelist)) {
 		$templatelist.= ',';
         }
