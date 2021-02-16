@@ -46,7 +46,7 @@ function mylast_threadlink()
 	if ($mybb->user['uid'] && $thread['doticon']) {
 		$mylast = "<a href='showthread.php?tid=" . $thread['tid'] . "&action=mylastpost'>";
 		$mylast_cl = "</a>";
-		$mylast_tip = " " . $lang->mylast_tooltip;
+		$mylast_tip = "" . $lang->mylast_tooltip;
 	}
 }
 
@@ -86,9 +86,9 @@ function mylast_templates()
 {
 	global $templatelist;
 	if (THIS_SCRIPT == 'showthread.php') {
-	if (isset($templatelist)) {
-		$templatelist.= ',';
-        }
+		if (isset($templatelist)) {
+			$templatelist.= ',';
+		}
 	$templatelist.= 'mylast_link';
 	}
 }
